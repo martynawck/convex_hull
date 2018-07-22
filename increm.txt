@@ -1,0 +1,167 @@
+vector <Edge> temporary;
+	vector <Edge>temporary_2;
+	 std::vector<Edge>::iterator ie;
+	 std::vector<Edge>::iterator iee;
+	 vector <Facet> ftemp;
+	// std::vector<Facet>::iterator ix;
+//it = myset.find (60);
+	// set <Facet> tmp;
+	 /*
+	 cout<<"MIDDLE"<<endl;
+	 cout<<middle.getX()<<endl;
+	 cout<<middle.getY()<<endl;
+	 cout<<middle.getZ()<<endl;*/
+
+	for (unsigned i = 0; i < 7; i++) {
+		if(!vertices[i].isVisited()){
+			cout<<"I "<<i<<"size"<<facets.size()<<endl;
+		//	cout<<volume(
+
+			for (unsigned j = 0; j < facets.size(); j++) {
+				if (facets[j].getVisible() == true) {
+		//		cout<<"J"<<j<<endl;
+				cout<<volume(facets[j],vertices[i])<<endl;
+			cout<<"size"<<facets.size()<<endl;
+				//if (facets[j].halfSpace(vertices[i], middle)) {
+					if (volume(facets[j],vertices[i]) < 0.006) {
+						cout<<facets[j].getV1().getX()<<" "<<facets[j].getV2().getX()<<" "<<facets[j].getV3().getX()<<endl;
+					//cout<<volume(facets[j],vertices[i])<<endl;
+						ftemp.push_back(facets[j]);
+						facets[j].setVisible(false);
+					//facets.erase(facets.begin() + j);		
+					}
+				}
+			}
+
+
+			unsigned k = 0;
+			while (k  < facets.size()) {
+				if (facets[k].getVisible() == true) {
+					k++;
+				} else {
+					facets.erase(facets.begin() + k);
+				}
+				
+			}
+
+
+			cout<<"po usuniêciu"<<endl;
+			for (unsigned k = 0; k < facets.size(); k++) {
+				cout<<facets[k].getV1().getX()<<" "<<facets[k].getV2().getX()<<" "<<facets[k].getV3().getX()<<endl;
+			}
+
+			cout<<endl;
+			for (unsigned k = 0; k < ftemp.size(); k++) {
+				cout<<ftemp[k].getV1().getX()<<" "<<ftemp[k].getV2().getX()<<" "<<ftemp[k].getV3().getX()<<endl;
+			}
+			
+
+
+			cout <<"sajz"<<ftemp.size()<<endl;
+		
+			for (vector<Facet>::iterator ix = ftemp.begin(); ix != ftemp.end(); ix++) {
+				cout <<"sajz temps"<<temporary.size()<<endl;
+				cout<< "sajz temp2"<<temporary_2.size()<<endl;
+				/*
+				
+				ie = find(temporary.begin(), temporary.end(), ix->getE2());
+				iee = find(temporary_2.begin(), temporary_2.end(),ix->getE2());
+				cout<<ix->getE2().getV1().getX()<< " "<<ix->getE2().getV2().getX()<<endl;
+				if ((ie == temporary.end()) && (iee == temporary_2.end())) {
+					cout<<"y3"<<endl;
+					temporary.push_back(ix->getE2());
+				} else {
+					
+					if (ie != temporary.end()) {
+						cout<<"n3"<<endl;
+					temporary.erase(ie);
+					temporary_2.push_back(ix->getE2());
+					}
+				}
+
+				cout <<"sajz temps"<<temporary.size()<<endl;
+				cout<< "sajz temp2"<<temporary_2.size()<<endl;
+
+				ie = find(temporary.begin(), temporary.end(), ix->getE3());
+				iee = find(temporary_2.begin(), temporary_2.end(),ix->getE3());
+				cout<<ix->getE3().getV1().getX()<< " "<<ix->getE3().getV2().getX()<<endl;
+				if ((ie == temporary.end()) && (iee == temporary_2.end())) {
+					cout<<"y1"<<endl;
+					temporary.push_back(ix->getE3());
+				} else {
+
+					if (iee != temporary_2.end()) {
+						cout<<"N@@@"<<endl;
+					}
+					
+					
+					
+					if (ie != temporary.end()) {
+						cout<<"n1"<<endl;
+					temporary.erase(ie);
+					temporary_2.push_back(ix->getE3());
+					}
+				}
+
+				ie = find(temporary.begin(), temporary.end(), ix->getE1());
+				iee = find(temporary_2.begin(), temporary_2.end(),ix->getE1());
+				cout<<ix->getE1().getV1().getX()<< " "<<ix->getE1().getV2().getX()<<endl;
+				if ((ie == temporary.end()) && (iee == temporary_2.end())) {
+					cout<<"y2"<<endl;
+					temporary.push_back(ix->getE1());
+				} else {
+					
+					if (ie != temporary.end()) {
+						cout<<"n2"<<endl;
+					temporary.erase(ie);
+					temporary_2.push_back(ix->getE1());
+					}
+				}
+
+				cout <<"sajz temps"<<temporary.size()<<endl;
+				cout<< "sajz temp2"<<temporary_2.size()<<endl;
+
+
+				
+				*/
+				
+				temporary.push_back(ix->getE1());
+				temporary.push_back(ix->getE2());
+				temporary.push_back(ix->getE3());
+
+				cout <<"sajz temps"<<temporary.size()<<endl;
+				cout<< "sajz temp2"<<temporary_2.size()<<endl;
+			}
+			
+		//	cout<<"DSDSA"<<endl;
+			for ( vector<Edge>::iterator it = temporary.begin(); it != temporary.end(); it++) {
+				Facet f =Facet( *it,  Edge(it->getV1(), vertices[i]),  Edge(vertices[i],it->getV2()) );
+				f.setVisible(true);
+				facets.push_back(f);
+				
+				cout<<"FFFF"<<it->getV1().getX()<<" "<<it->getV2().getX()<<endl;
+			}
+
+			for ( vector<Edge>::iterator it = temporary_2.begin(); it != temporary_2.end(); it++) {
+				
+				cout<<"ddddd"<<it->getV1().getX()<<" "<<it->getV2().getX()<<endl;
+			}
+		//	cout<<endl;
+			//cout<<endl;
+			ftemp.clear();
+			temporary.clear();
+			temporary_2.clear();
+			vertices[i].setVisited(true);
+		}
+
+	}
+	
+	for ( vector <Facet>::iterator it = facets.begin(); it != facets.end(); it++) {
+		cout<<it->getE1().getV1().getX()<<" "<<it->getE1().getV2().getX()<<endl;
+		cout<<it->getE2().getV1().getX()<<" "<<it->getE2().getV2().getX()<<endl;
+		cout<<it->getE3().getV1().getX()<<" "<<it->getE3().getV2().getX()<<endl;
+		cout<<endl;
+			//	Facet f = Facet( Edge(it->getV1(), it->getV2()),  Edge(it->getV1(), vertices[i]),  Edge(it->getV2(),vertices[i]) );
+			//	f.setVisible(true);
+			//	facets.push_back(f);
+	}

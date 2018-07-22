@@ -1,0 +1,40 @@
+﻿Build started 2014-06-14 14:38:54.
+     1>Project "D:\AAL_NOWA_KOPIA_12_06\AAL\AAL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ConvexHull.cpp GUI.cpp IncrementalHull.cpp QuickHull.cpp Vertex.cpp
+         ConvexHull.cpp
+         GUI.cpp
+         IncrementalHull.cpp
+         QuickHull.cpp
+     1>QuickHull.cpp(123): warning C4390: ';' : empty controlled statement found; is this the intent?
+         Vertex.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\AAL_NOWA_KOPIA_12_06\Release\AAL.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\AAL_NOWA_KOPIA_12_06\Release\AAL.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\AAL_NOWA_KOPIA_12_06\Release\AAL.lib" /MACHINE:X86 /SAFESEH Release\ConvexHull.obj
+         Release\Edge.obj
+         Release\Facet.obj
+         Release\Generator.obj
+         Release\QuickHull.obj
+         Release\IncrementalHull.obj
+         Release\Point.obj
+         Release\Set.obj
+         Release\Minimizer.obj
+         Release\GUI.obj
+         Release\Vertex.obj
+         Generating code
+         Finished generating code
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>glut32.lib(glut32.dll) : error LNK2026: module unsafe for SAFESEH image.
+     1>D:\AAL_NOWA_KOPIA_12_06\Release\AAL.exe : fatal error LNK1281: Unable to generate SAFESEH image.
+     1>Done Building Project "D:\AAL_NOWA_KOPIA_12_06\AAL\AAL.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:11.02

@@ -1,0 +1,6 @@
+﻿Build started 2014-06-16 10:49:41.
+     1>Project "E:\AAL_NOWA_KOPIA_12_06\AAL\AAL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt GUI.cpp
+         GUI.cpp
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets(611,5): warning MSB6008: Forcing a rebuild of all sources due to an error with the tracking logs. The process cannot access the file 'E:\AAL_NOWA_KOPIA_12_06\AAL\Debug\link.19508-cvtres.write.1.tlog' because it is being used by another process.
